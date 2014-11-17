@@ -18,3 +18,4 @@ like
 ## The Alumni
 
 * [masukomi](http://www.masukomi.org/resume/kay_rhodes_resume.html)
+* [ksonberg](https://www.linkedin.com/profile/view?id=16497505&trk=nav_responsive_tab_profile)
