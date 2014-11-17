@@ -18,3 +18,4 @@ like
 ## The Alumni
 
 * [masukomi](http://www.masukomi.org/resume/kay_rhodes_resume.html)
+* [Peter Sichel](http://www.sustworks.com)
