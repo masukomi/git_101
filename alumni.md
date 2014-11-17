@@ -1,4 +1,4 @@
-# Git 101 Alumni
+s# Git 101 Alumni
 
 This file serves two functions: 
 
@@ -18,3 +18,4 @@ like
 ## The Alumni
 
 * [masukomi](http://www.masukomi.org/resume/kay_rhodes_resume.html)
+* Paul Porkhovnik (http://www.masukomi.org/paul_resume.html)
