@@ -18,3 +18,5 @@ like
 ## The Alumni
 
 * [masukomi](http://www.masukomi.org/resume/kay_rhodes_resume.html)
+
+## Class of Nov 17 2014
