@@ -20,3 +20,4 @@ like
 * [masukomi](http://www.masukomi.org/resume/kay_rhodes_resume.html)
 
 ## Class of Nov 17 2014
+* [K2](http://www.github.com/kgf)
