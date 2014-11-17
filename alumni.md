@@ -9,7 +9,7 @@ Participants should add their name and a link to their resume below. The
 markdown syntax for creating a link is: 
 
 	[display text](http://example.com)
-
+`
 Preface this with a `*` to make it an entry in a bullet list. Yours should look
 like 
 
@@ -18,3 +18,4 @@ like
 ## The Alumni
 
 * [masukomi](http://www.masukomi.org/resume/kay_rhodes_resume.html)
+* [ThomasCarlson](//http://www.linkedin.com/hp/?dnr=GPBPPij_1Y4A8h9IGIPPXQongoqAhm9XG6B)
