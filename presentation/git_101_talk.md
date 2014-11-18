@@ -1,4 +1,5 @@
-# [fit] Git 101
+#[fit] Git 101
+# by @masukomi
 
 ^
 This document designed for use with [Deckset](http://www.decksetapp.com/)
@@ -481,6 +482,25 @@ This is one of the *2* times when git will talk to the outside world.
 
 ---
 
+# Moving / Renaming a file
+	git mv path/to/file.txt new_path/to/files_new_name.txt
+
+That moves / renames the file, & adds it to the index. 
+
+*You still need to commit the change.*
+
+---
+
+# Removing a file
+
+	git rm path/to/file.txt	
+	
+That deletes the file, and tells git about the deletion.
+
+*You still need to commit the change.*
+
+---
+
 ## Git is *very* careful with your data
 
 ![fill](images/bubbles_on_her_fingers.jpg)
@@ -490,6 +510,29 @@ You'll regularly encounter complaints from git
 where you've told it to do something that would harm your data. 
 
 ---
+![fill](images/motorcycle_police.jpg)
+
+##[fit] Git will police your actions
+
+### Things that can hurt others: 
+* pushing to the "central" repo with force ( `-f` )
+
+### Things that can hurt you:
+* `git reset --hard <anything>`
+* general stupidity
+
+---
+
+##[fit] If your coworkers have pulled 
+##[fit] recently *anything is recoverable*.
+---
+
+#[fit] Thank You
+
+# Questions? 
+## @masukomi on twitter
+
+---
 
 # Image Credits
 
@@ -497,5 +540,6 @@ where you've told it to do something that would harm your data.
 * [silence](https://www.flickr.com/photos/citizen_poeta/1446906402) [by nc-nd-2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/) Alberto Oritz
 * [equality](https://www.flickr.com/photos/monkeygrimace/12541769263) [by nc-nc-nd 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/) Paul Simpson
 * [Instructions for monkeys](https://flic.kr/p/aaBZ1) [by cc-by-2.0](https://creativecommons.org/licenses/by/2.0/) Jackie
+* [Motorcycle Police](https://www.flickr.com/photos/skynoir/14092724776) [by-nc-2.0](https://creativecommons.org/licenses/by-nc/2.0/) Bill Dickinson
 
 ---
