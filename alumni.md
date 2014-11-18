@@ -1,4 +1,4 @@
-# Git 101 Alumni
+s# Git 101 Alumni
 
 This file serves two functions: 
 
@@ -21,3 +21,4 @@ like
 
 ## Class of Nov 17 2014
 * [K2](http://www.github.com/kgf)
+* Paul Porkhovnik (http://www.masukomi.org/paul_resume.html)
