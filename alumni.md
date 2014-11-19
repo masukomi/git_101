@@ -21,4 +21,4 @@ like
 ## Class of Nov 17 2014
 * [K2](http://www.github.com/kgf)
 * [mohan][http://example.com/msvresume.html]
-
+* [Charles Magid](http://rubyCharles.com)
