@@ -36,8 +36,9 @@ git diff HEAD^
 git difftool HEAD^
 
 # how about a different tool?
-git difftool --tool=Kaleidoscope
+git difftool --tool=Kaleidoscope HEAD^
 
+# let's get rid of byebug
 echo -e "puts 'hello'\nputs 'world'" > foo.rb
 
 git diff
@@ -46,10 +47,15 @@ git add foo.rb
 
 git commit --amend -m "added foo.rb and bar.rb hello world scripts"
 
-git log --stat -1
+git log --stat
 
-# how to back up and explore 
-# a different solution to a problem
+# what if we want to back up 
+# and explore 
+# a different solution to a problem?
+
+# first i want you to note what HEAD is 
+# currently pointed to
+
 cat .git/HEAD
 
 git checkout HEAD^
@@ -63,15 +69,15 @@ echo "another bogus file" > bogus.txt
 git add bogus.txt
 git commit -m "added bogus file" 
 
+git branch
+
 # just to show it could be done
 git checkout -b back_one_step
 
-git log --left-right --graph --cherry-pick --oneline \
-handling_mistakes..back_one_step
+git log --left-right --graph --cherry-pick --oneline handling_mistakes..back_one_step
 
 
-git log --left-right --graph --cherry-pick --oneline \
-back_one_step..handling_mistakes
+git log --left-right --graph --cherry-pick --oneline back_one_step..handling_mistakes
 
 git push origin back_one_step
 
@@ -95,6 +101,8 @@ git branch -a | grep back_one_step
 # push nothing to that branch
 git push origin :back_one_step
 
+
+# update git's knowledge of the remote repo
 git fetch 
 
 git branch -a | grep back_one_step
@@ -102,14 +110,21 @@ git branch -a | grep back_one_step
 ######### stash 
 # let's play with stash
 
+
+#edit an existing file
 echo "puts 'stuff in existing file'"  > bar.rb
 
+# create a new file
 echo "some bogus stuff" > bogus.txt
 
 git status
 
 # stash it.
+# and note that it tells you what branch
+# the stash was made against
 git stash
+
+
 git status
 # note that the edit to bar.rb is gone,
 # but the bogus.txt is still showing up.
@@ -120,14 +135,20 @@ git stash list
 # the stash was created against
 # apply it
 git stash pop
+# note that this *can* result in a conflict
+
 git status
 # changes are back
 # note that it's gone from the list
 git stash list
 
 # let's save it again with a more 
+# useful message
 git stash save "stashing bogus stuff"
 git stash list
+# note that now it tells us the branch and our message
+
+
 
 git stash apply stash@{0}
 # note that it's still present in the list of stashes
@@ -144,7 +165,10 @@ git stash drop stash@{0}
 # playing with stash 
 git reset --hard HEAD
 
+rm bogus.txt
+
 ### END STASH
+#############################
 
 # REMOVING FILES
 # Deal with files that shouldn't have been added
@@ -161,14 +185,19 @@ git add trash.rb
 
 git status
 
-# Hasn't been committed
-# how do we remove it from the index
+# This hasn't been committed yet.
+# How do we remove it from the index
 # without deleting the file?
 
 git reset HEAD trash.rb
 
+
 git status
-# now we're good to commit
+# note that it's not longer
+# in "Changes to be commited"
+# BUT it hasn't been deleted.
+
+# So, now we're good to commit
 git commit -m "indicated the superiority of bar in bar.rb"
 
 git status
@@ -176,7 +205,6 @@ git status
 git log --stat -1
 
 
-# Rebasing
 # exersise one: removing file from commit without deleting it.
 echo "puts 'bar is OBVIOUSLY better than foo'" > bar.rb
 
@@ -192,6 +220,49 @@ git commit -m "made it even more obvious how superior bar was"
 
 git log --stat -1
 
-# now to do a rebase 
+# Does not touch the index file or the working tree at all,
+# but resets the head to <commit>
+git reset --soft HEAD^
+
+git log --stat -1
+
+git status
+# because we've moved HEAD, it's now at a point 
+# where trash.rb didn't exist 
+# so, now we resolve it the same way we
+# did before
+git reset HEAD trash.rb
+
+### ok, but what happens when the bad add
+# is in a prior commit.
+git add trash.rb
+git commit -m "added changes to bar and *accidentally* added trash"
 
 
+echo 'puts "yet another silly change"' > bar.rb
+git add -u
+git commit -m "just moving things along a commit"
+
+git log
+
+### END AUTOMATED
+
+# we're going to start a rebase
+# git rebase -i HEAD^^
+# edit the appropriate commit
+
+
+# git log --stat
+#  note that the commit we want to edit has already been applied
+# git reset HEAD^
+#   effectively undoes that commit and leaves the modified files unstaged
+# git add bar.rb
+# git commit -m "edited bar (without trash.rb now)"
+# git log
+#   that first commit, our new commit
+#   but not the just moving things along commit
+
+# git rebase --continue
+# git log
+#   and now we have the "just moving things along"
+#   commit back. :)
