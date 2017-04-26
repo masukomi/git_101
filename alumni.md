@@ -22,3 +22,6 @@ like
 * [K2](http://www.github.com/kgf)
 * [mohan][http://example.com/msvresume.html]
 
+## Class of April 2017
+* [Chris Houhoulis](https://github.com/houhoulis)
+
